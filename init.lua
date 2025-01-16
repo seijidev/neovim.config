@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -620,7 +620,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -839,25 +839,111 @@ require('lazy').setup({
       }
     end,
   },
-
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    'gambhirsharma/vesper.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      --vim.cmd.colorscheme 'vesper'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
   },
 
+  {
+    'ribru17/bamboo.nvim',
+    priority = 1000,
+    init = function()
+      --vim.cmd.colorscheme 'bamboo'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    init = function()
+      --vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'rebelot/kanagawa.nvim',
+    name = 'kanagawa',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'kanagawa'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'EdenEast/nightfox.nvim',
+    name = 'nightfox',
+    priority = 1000,
+    init = function()
+      --vim.cmd.colorscheme 'carbonfox'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'Shatur/neovim-ayu',
+    name = 'ayu',
+    priority = 1000,
+    init = function()
+      --vim.cmd.colorscheme 'ayu-mirage'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'neanias/everforest-nvim',
+    priority = 1000,
+    init = function()
+      --vim.cmd.colorscheme 'everforest'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  --[[
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('poimandres').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end,
+
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd 'colorscheme poimandres'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+--]]
+  {
+    'craftzdog/solarized-osaka.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = false,
+    },
+  },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -891,7 +977,7 @@ require('lazy').setup({
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
-        return '%2l:%-2v'
+        return '%2l:%-2v [%P]'
       end
 
       -- ... and there is more!
@@ -944,7 +1030,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
