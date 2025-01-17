@@ -30,3 +30,7 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Disable 's' default behavior to remove conflict with mini.surround mappings
+vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
+-- vim: ts=2 sts=2 sw=2 et

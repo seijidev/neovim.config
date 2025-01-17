@@ -42,18 +42,22 @@ return {
           F12 = '<F12>',
         },
       },
-
+      triggers = {
+        { '<auto>', mode = 'nixsotc' }, -- By default opts.triggers only includes this line
+        { 's', mode = { 'n', 'v' } }, -- Enables which-key menu for 's'
+      },
       -- Document existing key chains
       spec = {
-        --[[
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
+        --{ '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        --{ '<leader>d', group = '[D]ocument' },
+        --{ '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        --]]
+        --{ '<leader>w', group = '[W]orkspace' },
+        --{ '<leader>t', group = '[T]oggle' },
+        --{ '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { 'K', group = 'Hover Documentation', mode = { 'n' } },
+        { '<leader>f', group = '[F]ind' },
+        { 's', group = 'Surround' },
       },
     },
   },
