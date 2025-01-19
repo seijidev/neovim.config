@@ -327,6 +327,13 @@ return {
       end,
       desc = 'LSP Symbols',
     },
+    {
+      '<leader>sS',
+      function()
+        Snacks.picker.lsp_workspace_symbols()
+      end,
+      desc = 'LSP Workspace Symbols',
+    },
     -- GENERAL SNACKS MAPPINGS
     {
       '<leader>z',
