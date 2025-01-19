@@ -10,7 +10,8 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     dim = { enabled = true },
-    indent = { only_scope = true },
+    git = { enabled = true },
+    --indent = { only_scope = true },
     input = { enabled = true },
     notifier = {
       enabled = false,
