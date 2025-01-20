@@ -30,7 +30,17 @@ return {
         nerd_font_variant = 'mono',
       },
 
+      completion = {
+        ghost_text = { enabled = true },
+      },
+
+      --[[
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      --]]
       signature = { enabled = true },
     },
+    opts_extend = { 'sources.default' },
   },
 }
