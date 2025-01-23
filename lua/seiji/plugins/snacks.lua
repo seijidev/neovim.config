@@ -29,7 +29,7 @@ return {
         wo = { wrap = true },
       },
       terminal = {
-        height = 0.2,
+        height = 0.25,
         bo = {
           filetype = 'snacks_terminal',
         },
