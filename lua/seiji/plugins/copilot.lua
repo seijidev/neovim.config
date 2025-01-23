@@ -9,7 +9,7 @@ return {
         enabled = true,
         auto_trigger = true,
         keymap = {
-          accept = '<S-Y>',
+          accept = '<C-CR>',
         },
       },
       panel = { enabled = false },
