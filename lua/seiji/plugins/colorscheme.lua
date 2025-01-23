@@ -4,6 +4,7 @@ return { -- You can easily change to a different colorscheme.
   -- change the command in the config to whatever the name of that colorscheme is.
   --
   'gambhirsharma/vesper.nvim',
+  lazy = false,
   priority = 1000, -- Make sure to load this before all the other start plugins.
   init = function()
     -- Load the colorscheme here.
@@ -16,12 +17,53 @@ return { -- You can easily change to a different colorscheme.
   end,
 },
 --]]
+-- return {
+--   'rebelot/kanagawa.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   opts = {},
+--   init = function()
+--     vim.cmd.colorscheme 'kanagawa-wave'
+--     vim.cmd.hi 'Comment gui=none'
+--   end,
+-- }
+
+-- return {
+--   'sho-87/kanagawa-paper',
+--   lazy = false,
+--   priority = 1000,
+--   opts = {},
+--   init = function()
+--     vim.cmd.colorscheme 'kanagawa-paper'
+--     vim.cmd.hi 'Comment gui=none'
+--   end,
+-- }
+--
+-- return {
+--   'olivercederborg/poimandres.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('poimandres').setup {
+--       -- leave this setup function empty for default config
+--       -- or refer to the configuration section
+--       -- for configuration options
+--     }
+--   end,
+--
+--   -- optionally set the colorscheme within lazy config
+--   init = function()
+--     vim.cmd 'colorscheme poimandres'
+--   end,
+-- }
+
 return {
-  'rebelot/kanagawa.nvim',
+  'eldritch-theme/eldritch.nvim',
+  lazy = false,
   priority = 1000,
   opts = {},
   init = function()
-    vim.cmd.colorscheme 'kanagawa'
+    vim.cmd.colorscheme 'eldritch'
     vim.cmd.hi 'Comment gui=none'
   end,
 }
