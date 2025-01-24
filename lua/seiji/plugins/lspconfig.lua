@@ -104,6 +104,14 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
+        zls = {
+          --cmd = {}, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
+          settings = {
+            zls = {
+              enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
+            },
+          },
+        },
         pyright = {},
         lua_ls = {
           -- cmd = { ... },
@@ -113,6 +121,7 @@ return {
             Lua = {
               --[[
               completion = {
+                -- Commented out for blink.cmp signature highlighting compatibility
                 callSnippet = 'Replace',
               },
               --]]
