@@ -20,7 +20,12 @@ return {
     },
     picker = {},
     quickfile = { enabled = true },
-    scroll = { enabled = true },
+    scroll = {
+      animate = {
+        duration = { step = 10, total = 250 },
+        easing = 'linear',
+      },
+    },
     statuscolumn = { enabled = true },
     terminal = {},
     words = { enabled = true },
