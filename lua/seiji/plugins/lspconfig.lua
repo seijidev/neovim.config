@@ -108,7 +108,7 @@ return {
           --cmd = {}, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
           settings = {
             zls = {
-              enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
+              -- enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
             },
           },
         },
@@ -119,12 +119,10 @@ return {
           -- capabilities = {},
           settings = {
             Lua = {
-              --[[
               completion = {
                 -- Commented out for blink.cmp signature highlighting compatibility
                 callSnippet = 'Replace',
               },
-              --]]
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               diagnostics = { disable = { 'missing-fields' } },
             },
