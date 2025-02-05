@@ -6,5 +6,5 @@ return {
     { '<leader>jj', '<cmd>TSJJoin<cr>', desc = 'Join Node' },
   },
   dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
-  opts = { use_default_keymaps = false },
+  opts = { use_default_keymaps = false, langs = zig },
 }

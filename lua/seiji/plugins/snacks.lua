@@ -11,6 +11,7 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     dim = { enabled = true },
+    explorer = { replace_netrw = true },
     git = { enabled = true },
     --indent = { only_scope = true },
     input = { enabled = true },
@@ -480,6 +481,14 @@ return {
           },
         }
       end,
+    },
+    {
+      '<leader>p',
+      function()
+        Snacks.picker.explorer()
+      end,
+      desc = 'Explorer',
+      mode = { 'n' },
     },
   },
   init = function()
