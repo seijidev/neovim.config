@@ -78,7 +78,7 @@ return {
     {
       'gO',
       function()
-        vim.lsp.buf.document_symbol()
+        Snacks.picker.lsp_symbols { filter = { lua = { 'String' } } }
       end,
       desc = 'LSP Document Symbols',
     },
@@ -106,9 +106,9 @@ return {
     {
       '<leader><space>',
       function()
-        Snacks.picker.files()
+        Snacks.picker.smart()
       end,
-      desc = 'Find Files',
+      desc = 'Smart Find Files',
     },
     -- find
     {
@@ -176,13 +176,13 @@ return {
       end,
       desc = 'Grep Open Buffers',
     },
-    {
-      '<leader>sg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
+    -- {
+    --   '<leader>sg',
+    --   function()
+    --     Snacks.picker.grep()
+    --   end,
+    --   desc = 'Grep',
+    -- },
     {
       '<leader>sw',
       function()
@@ -198,6 +198,13 @@ return {
         Snacks.picker.registers()
       end,
       desc = 'Registers',
+    },
+    {
+      '<leader>s/',
+      function()
+        Snacks.picker.search_history()
+      end,
+      desc = 'Search History',
     },
     {
       '<leader>sa',
@@ -251,7 +258,9 @@ return {
     {
       '<leader>sk',
       function()
-        Snacks.picker.keymaps()
+        Snacks.picker.keymaps {
+          layout = 'vertical',
+        }
       end,
       desc = 'Keymaps',
     },
@@ -304,16 +313,32 @@ return {
       end,
       desc = 'Projects',
     },
+    {
+      '<leader>sp',
+      function()
+        Snacks.picker.lazy()
+      end,
+      desc = 'Search for Plugin Spec',
+    },
+
     -- LSP
     {
-      'gd',
+      'grd',
       function()
         Snacks.picker.lsp_definitions()
       end,
       desc = 'Goto Definition',
     },
     {
-      'gr',
+      'grD',
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+      desc = 'Goto Declaration',
+    },
+
+    {
+      'grr',
       function()
         Snacks.picker.lsp_references()
       end,
@@ -321,18 +346,18 @@ return {
       desc = 'References',
     },
     {
-      'gI',
+      'gri',
       function()
         Snacks.picker.lsp_implementations()
       end,
       desc = 'Goto Implementation',
     },
     {
-      'gy',
+      'grt',
       function()
         Snacks.picker.lsp_type_definitions()
       end,
-      desc = 'Goto T[y]pe Definition',
+      desc = 'Goto Type Definition',
     },
     {
       '<leader>ss',
@@ -342,7 +367,7 @@ return {
       desc = 'LSP Symbols',
     },
     {
-      '<leader>sS',
+      'gW',
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,
@@ -392,7 +417,7 @@ return {
       desc = 'Delete Buffer',
     },
     {
-      '<leader>cR',
+      '<leader>rf',
       function()
         Snacks.rename.rename_file()
       end,
@@ -490,7 +515,7 @@ return {
       end,
     },
     {
-      '<leader>p',
+      '<leader>e',
       function()
         Snacks.picker.explorer()
       end,
