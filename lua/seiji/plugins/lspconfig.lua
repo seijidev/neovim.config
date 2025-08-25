@@ -159,13 +159,13 @@ return {
           cmd = 'omnisharp',
         },
         zls = {
-          cmd = { '~/.zig/tools/zls/zls' }, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
+          -- cmd = { '~/.zig/tools/zls/zls' }, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
           settings = {
-            -- zls = {
-            --   -- enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
-            -- },
-            semantic_tokens = 'partial',
-            zig_exe_path = '~/.zig/tools/zls/zls',
+            zls = {
+              -- enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
+              semantic_tokens = 'partial',
+              -- zig_exe_path = '~/.zig/tools/zls/zls',
+            },
           },
         },
         pyright = {},
@@ -199,10 +199,10 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)

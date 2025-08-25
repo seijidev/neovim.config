@@ -57,18 +57,6 @@ return { -- Autocompletion
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
       preset = 'default',
-      --[[
-      ['<C-f>'] = {
-        function(cmp)
-          cmp.scroll_documentation_up(4)
-        end,
-      },
-      ['<C-b>'] = {
-        function(cmp)
-          cmp.scroll_documentation_down(4)
-        end,
-      },
-      --]]
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
     },
@@ -109,7 +97,7 @@ return { -- Autocompletion
     fuzzy = { implementation = 'prefer_rust_with_warning' },
 
     -- Shows a signature help window while you type arguments for a function
-    signature = { enabled = true },
+    signature = { enabled = false },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

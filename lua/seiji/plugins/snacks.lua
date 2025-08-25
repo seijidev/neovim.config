@@ -76,6 +76,13 @@ return {
   keys = {
     -- PICKER MAPPINGS
     {
+      'gO',
+      function()
+        vim.lsp.buf.document_symbol()
+      end,
+      desc = 'LSP Document Symbols',
+    },
+    {
       '<leader>,',
       function()
         Snacks.picker.buffers()
@@ -296,6 +303,13 @@ return {
         Snacks.picker.projects()
       end,
       desc = 'Projects',
+    },
+    {
+      '<leader>qq',
+      function()
+        Snacks.picker.projects()
+      end,
+      desc = 'Poo',
     },
     -- LSP
     {
