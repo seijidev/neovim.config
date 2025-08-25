@@ -304,13 +304,6 @@ return {
       end,
       desc = 'Projects',
     },
-    {
-      '<leader>qq',
-      function()
-        Snacks.picker.projects()
-      end,
-      desc = 'Poo',
-    },
     -- LSP
     {
       'gd',
