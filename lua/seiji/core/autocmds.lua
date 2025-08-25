@@ -11,3 +11,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Set indent rules by filetype (only use when lsp/formatter doesn't do this automatically)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'cs',
+  callback = function()
+    vim.opt_local.tabstop = 4 -- number of visual spaces per TAB
+    vim.opt_local.shiftwidth = 4 -- spaces for each indent level
+    vim.opt_local.expandtab = true -- use spaces instead of tabs
+  end,
+})

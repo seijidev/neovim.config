@@ -24,5 +24,18 @@ return {
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    build = ':TSUpdate',
+    opts = {
+      enable = true,
+      max_lines = 3,
+      min_window_height = 0,
+      line_numbers = true,
+      multiline_threshold = 20,
+      trim_scope = 'outer',
+      mode = 'cursor', -- Show context for where the cursor is
+    },
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et

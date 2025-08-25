@@ -104,12 +104,20 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
+        -- csharp_ls = {
+        --   -- root_dir = util.root_pattern('*.sln', '*.csproj', '.git'),
+        -- },
+        omnisharp = {
+          cmd = 'omnisharp',
+        },
         zls = {
-          --cmd = {}, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
+          cmd = { '~/.zig/tools/zls/zls' }, -- { '/path/to/zls_executable' } if you installed zls manually and it's not in PATH
           settings = {
-            zls = {
-              -- enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
-            },
+            -- zls = {
+            --   -- enable_argument_placeholders = false, -- set to false for blink.cmp signature highlighting compatibility
+            -- },
+            semantic_tokens = 'partial',
+            zig_exe_path = '~/.zig/tools/zls/zls',
           },
         },
         pyright = {},
@@ -130,10 +138,15 @@ return {
         },
       }
 
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = vim.tbl_keys(servers or {}) -- Original line
+      -- local ensure_installed = vim.tbl_filter(function(name) -- Start
+      --   return name ~= 'zls'
+      -- end, vim.tbl_keys(servers or {})) -- End. This block replaced the original line.
+
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'black', -- Used to format Python code
+        'csharpier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
