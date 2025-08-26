@@ -61,12 +61,55 @@ return { -- You can easily change to a different colorscheme.
   },
   {
     'eldritch-theme/eldritch.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {},
     init = function()
       vim.cmd.colorscheme 'eldritch'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+  {
+    'mitch1000/backpack.nvim',
+    enabled = false,
+    opts = {},
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('backpack').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+        contrast = 'high',
+      }
+    end,
+    init = function()
+      vim.cmd.colorscheme 'backpack'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'scottmckendry/cyberdream.nvim',
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    init = function()
+      vim.cmd.colorscheme 'cyberdream'
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'zootedb0t/citruszest.nvim',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    init = function()
+      vim.cmd.colorscheme 'citruszest'
       vim.cmd.hi 'Comment gui=none'
     end,
   },

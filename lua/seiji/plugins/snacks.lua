@@ -21,12 +21,12 @@ return {
     },
     picker = {},
     quickfile = { enabled = true },
-    scroll = {
-      animate = {
-        duration = { step = 10, total = 250 },
-        easing = 'linear',
-      },
-    },
+    -- scroll = {
+    --   animate = {
+    --     duration = { step = 20, total = 250 },
+    --     easing = 'linear',
+    --   },
+    -- },
     statuscolumn = { enabled = true },
     terminal = {},
     words = { enabled = true },
